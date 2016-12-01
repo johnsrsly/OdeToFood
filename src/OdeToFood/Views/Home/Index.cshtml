@@ -1,0 +1,23 @@
+﻿@model OdeToFood.ViewModels.HomePageViewModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OdeToFood</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <h3>@Model.CurrentMessage</h3>
+    <table>
+        @foreach (var r in Model.Resturants)
+        {
+        <tr>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = r.Id })
+            </td>
+            <td>@r.Name</td>
+        </tr>
+        }
+    </table>
+
+</body>
+</html>
